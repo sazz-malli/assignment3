@@ -7,4 +7,25 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  string = '';
+  stringDisplayFlag = false;
+  // valArray : number[] = [0];
+  valArray = [];
+  counts: number = 0;
+
+  getData() {
+    if (!this.stringDisplayFlag) {
+      this.stringDisplayFlag = true;
+      this.counts = this.counts + 1;
+      this.valArray.push(this.counts);
+      return this.string = 'Secret Password = tuna';
+    } else {
+      this.stringDisplayFlag = false;
+      this.counts = this.counts + 1;
+      this.valArray.push(this.counts);
+      return this.string = '';
+    }
+
+  }
+
 }
