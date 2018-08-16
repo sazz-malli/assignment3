@@ -9,14 +9,14 @@
       <button class="btn btn-primary" (click)="getData()">Display Details</button>
       <br>
       <p>{{ string }}</p>
-      <li *ngFor="let count of valArray">
+      <p *ngFor="let count of valArray">
         <!-- <span *ngIf="count < 5">{{count}}</span> -->
         <!-- <span *ngIf="count >= 5" style="color : white; background: blue">{{count}}</span> -->
         <span *ngIf="count < 5; else elseBlock"> {{ count }}</span>
         <ng-template #elseBlock>
-          <span style="color : white; background: blue">{{ count }}</span>
+          <span [ngStyle]="{ backgroundColor : 'blue' }" [ngClass]="{paintColor: true}">{{ count }}</span>
         </ng-template>
-      </li>
+      </p>
       <br>
     </div>
     <div class="col-md-4">

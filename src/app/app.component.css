@@ -4,5 +4,12 @@
 
 .color {
     color: white;
-    background: blue;
+}
+
+.paintColor {
+    color: white;
+  }
+  
+.container {
+    text-align: center;
 }

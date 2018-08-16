@@ -3,7 +3,16 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  // styleUrls: ['./app.component.css']
+  styles: [`
+  .paintColor {
+    color: white;
+  }
+
+  .container {
+      text-align: center;
+  }
+    `]
 })
 export class AppComponent {
   title = 'app';
@@ -26,6 +35,10 @@ export class AppComponent {
       return this.string = '';
     }
 
+  }
+
+  getColor() {
+    return 'blue';
   }
 
 }
