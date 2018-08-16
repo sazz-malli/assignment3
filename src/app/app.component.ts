@@ -27,6 +27,7 @@ export class AppComponent {
       this.stringDisplayFlag = true;
       this.counts = this.counts + 1;
       this.valArray.push(this.counts);
+      // this.valArray.push(this.valArray.length + 1);
       return this.string = 'Secret Password = tuna';
     } else {
       this.stringDisplayFlag = false;
@@ -40,5 +41,11 @@ export class AppComponent {
   getColor() {
     return 'blue';
   }
+
+
+  // getData(){
+  //   this.stringDisplayFlag = !this.stringDisplayFlag;
+  //   this.valArray.push(this.valArray.length + 1);
+  // }
 
 }

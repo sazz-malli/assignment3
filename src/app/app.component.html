@@ -12,10 +12,16 @@
       <p *ngFor="let count of valArray">
         <!-- <span *ngIf="count < 5">{{count}}</span> -->
         <!-- <span *ngIf="count >= 5" style="color : white; background: blue">{{count}}</span> -->
-        <span *ngIf="count < 5; else elseBlock"> {{ count }}</span>
+        <!-- <span *ngIf="count < 5; else elseBlock" [ngStyle]="{ backgroundColor : count >= 5 ? 'red' : 'blue' }"> {{ count }}</span>
         <ng-template #elseBlock>
-          <span [ngStyle]="{ backgroundColor : 'blue' }" [ngClass]="{paintColor: true}">{{ count }}</span>
-        </ng-template>
+          <span [ngStyle]="{ backgroundColor : count >= 5 ? 'red' : 'blue' }" [ngClass]="{paintColor: true}">{{ count }}</span>
+        </ng-template> -->
+        <!-- <ng-template #elseBlock>
+          <span [ngClass]="{paintColor: true}">{{ count }}</span>
+        </ng-template>         -->
+        <li>
+        <span [ngStyle]="{ backgroundColor : count >= 5 ? 'blue' : ''}" [ngClass]="{paintColor: count >= 5}"> {{ count }}</span>
+      </li>
       </p>
       <br>
     </div>
@@ -23,3 +29,22 @@
     </div>
   </div>
 </div>
+
+<!-- 
+<p>Instructor Example</p>
+<button class="btn btn-primary" (click)="stringDisplayFlag = !stringDisplayFlag">Display Details</button>
+or 
+<button class="btn btn-primary" (click)="getData()">Display Details</button>
+<p *ngIF = "stringDisplayFlag">Secret Password = tuna</p>
+<div *ngFor = "let count of valArray" 
+  [ngStyle] = "{ backgroundColor: count >= 5 ? 'blue' : 'transparent'}"
+  [ngClass]="{paintColor: count >= 5}">{{ count }}</div> 
+
+TS
+this.valArray.push(new Date());
+<div *ngFor = "let count of valArray; let i = index" 
+  [ngStyle] = "{ backgroundColor: i >= 4 ? 'blue' : 'transparent'}"
+  [ngClass]="{paintColor: i >= 4}">{{ count }}</div>
+
+
+-->
